@@ -1,12 +1,15 @@
-import "./../styles/board-card.css";
+import "../styles/board-card.css";
 
-function BoardCard() {
+function BoardCard({
+    title,
+    updatedAt,
+}) {
     return (
         <article className="board-card">
             <div className="board-preview" />
-            <h3>Product Roadmap</h3>
+            <h3>{title}</h3>
             <span>
-                Edited 2 hours ago
+                Edited {updatedAt}
             </span>
         </article>
     );

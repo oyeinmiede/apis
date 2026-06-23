@@ -2,8 +2,8 @@ import AppShell from "../../../components/layout/AppShell";
 import PageContainer from "../../../components/layout/PageContainer";
 
 import GreetingSection from "../components/GreetingSection";
-import BoardCard from "../components/BoardCard";
 import AiLauncher from "../components/AiLauncher";
+import RecentBoardsSection from "../components/RecentBoardsSection";
 
 const user = {
     name: "Gabrielle",
@@ -20,24 +20,7 @@ function DashboardPage() {
                         marginTop: "48px",
                     }}
                 >
-                    <h2>
-                        Recent Boards
-                    </h2>
-
-                    <div
-                        style={{
-                            display: "grid",
-                            gridTemplateColumns:
-                                "repeat(4, 1fr)",
-                            gap: "16px",
-                            marginTop: "16px",
-                        }}
-                    >
-                        <BoardCard />
-                        <BoardCard />
-                        <BoardCard />
-                        <BoardCard />
-                    </div>
+                    <RecentBoardsSection />
                 </div>
             </PageContainer>
         </AppShell>
