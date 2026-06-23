@@ -7,6 +7,7 @@ import RecentBoardsSection from "../components/RecentBoardsSection";
 import HiveActivityPanel from "../components/HiveActivityPanel";
 
 import '../styles/dashboard-layout.css'
+import TemplateSection from "../components/TemplateSection";
 
 const user = {
     name: "Gabrielle",
@@ -21,7 +22,8 @@ function DashboardPage() {
                 <div className="dashboard-grid">
                     <div><RecentBoardsSection /></div>
                     <HiveActivityPanel />
-                </div>                
+                </div>
+                <TemplateSection />
             </PageContainer>
         </AppShell>
     );

@@ -1,0 +1,63 @@
+.template-card {
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    background: var(--surface-1);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.template-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+}
+
+.template-preview {
+    height: 140px;
+    background:
+        linear-gradient(135deg,
+            var(--surface-2),
+            var(--surface-3));
+    display: grid;
+    place-items: center;
+}
+
+.hex-preview {
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--accent);
+    clip-path: polygon(25% 6%,
+            75% 6%,
+            100% 50%,
+            75% 94%,
+            25% 94%,
+            0 50%);
+    opacity: .7;
+}
+
+.template-info {
+    padding: 18px;
+}
+
+.template-category {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.template-info h3 {
+    margin-top: 8px;
+    font-size: 18px;
+}
+
+.template-info p {
+    margin-top: 8px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.template-info button {
+    margin-top: 16px;
+    cursor: pointer;
+    font-weight: 600;
+}
