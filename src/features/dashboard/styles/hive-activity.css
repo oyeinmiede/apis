@@ -1,0 +1,63 @@
+.hive-activity {
+    padding: 20px;
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    background: var(--surface-1);
+    height: fit-content;
+}
+
+
+.hive-activity-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+
+.hive-activity-header svg {
+    color: var(--accent);
+}
+
+
+.hive-activity-header h2 {
+    font-size: 18px;
+}
+
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+.activity-item {
+    display: flex;
+    gap: 12px;
+}
+
+
+.activity-avatar {
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.activity-item p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+.activity-item span {
+    color: var(--text-muted);
+    font-size: 12px;
+}
