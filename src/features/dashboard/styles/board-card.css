@@ -13,8 +13,32 @@
 }
 
 .board-preview {
+    position: relative;
     height: 120px;
     margin-bottom: 16px;
     border-radius: var(--radius-md);
-    background: var(--surface-3);
+    background: var(--bg-secondary);
+    overflow: hidden;
+}
+
+.board-preview::before {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 60px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(255, 193, 7, .15);
+}
+
+.board-preview::after {
+    content: "";
+    position: absolute;
+    top: 56px;
+    left: 84px;
+    width: 80px;
+    height: 12px;
+    border-radius: 999px;
+    background: rgba(184, 115, 51, .3);
 }

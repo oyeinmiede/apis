@@ -3,12 +3,16 @@ import Topbar from './Topbar'
 
 import './styles/app-shell.css'
 
+const user = {
+    name: "Gabrielle",
+};
+
 function AppShell({ children }) {
     return (
         <div className="app-shell">
             <Sidebar />
             <div className="workspace-area">
-                <Topbar />
+                <Topbar user={user} />
                 <main className="app-shell-content">
                     {children}
                 </main>

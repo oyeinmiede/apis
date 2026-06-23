@@ -5,11 +5,15 @@ import GreetingSection from "../components/GreetingSection";
 import BoardCard from "../components/BoardCard";
 import AiLauncher from "../components/AiLauncher";
 
+const user = {
+    name: "Gabrielle",
+};
+
 function DashboardPage() {
     return (
         <AppShell>
             <PageContainer>
-                <GreetingSection />
+                <GreetingSection user={user} />
                 <AiLauncher />
                 <div
                     style={{

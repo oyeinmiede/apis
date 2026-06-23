@@ -1,11 +1,11 @@
 import './styles/topbar.css'
 
-const Topbar = () => {
+const Topbar = ({ user }) => {
     return (
         <header className='topbar'>
             <div />
             <div className="topbar-user">
-                Gabrielle
+                {user.name}
             </div>
         </header>
     )
