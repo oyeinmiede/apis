@@ -1,0 +1,10 @@
+.greeting-section h1 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.greeting-section p {
+    margin-top: 8px;
+    color: var(--text-secondary);
+    font-size: 16px;
+}

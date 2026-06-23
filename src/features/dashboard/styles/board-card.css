@@ -1,0 +1,20 @@
+.board-card {
+    padding: 16px;
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    background: var(--surface-1);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.board-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+}
+
+.board-preview {
+    height: 120px;
+    margin-bottom: 16px;
+    border-radius: var(--radius-md);
+    background: var(--surface-3);
+}
