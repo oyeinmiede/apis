@@ -2,17 +2,15 @@ import AppShell from "../../../components/layout/AppShell";
 import PageContainer from "../../../components/layout/PageContainer";
 
 import GreetingSection from "../components/GreetingSection";
-import CommandBar from "../components/CommandBar";
 import BoardCard from "../components/BoardCard";
+import AiLauncher from "../components/AiLauncher";
 
 function DashboardPage() {
     return (
         <AppShell>
             <PageContainer>
                 <GreetingSection />
-
-                <CommandBar />
-
+                <AiLauncher />
                 <div
                     style={{
                         marginTop: "48px",
