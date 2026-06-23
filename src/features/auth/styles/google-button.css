@@ -1,0 +1,18 @@
+.google-button {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-primary);
+    background: transparent;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.google-button:hover {
+    background: var(--surface-2);
+}

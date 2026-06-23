@@ -1,0 +1,17 @@
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.auth-divider span {
+    flex: 1;
+    height: 1px;
+    background: var(--border-primary);
+}
+
+.auth-divider p {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
