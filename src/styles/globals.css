@@ -1,0 +1,13 @@
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+    min-height: 100vh;
+}

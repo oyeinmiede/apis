@@ -1,0 +1,17 @@
+.app-shell {
+    height: 100vh;
+    display: flex;
+    background: var(--bg-primary);
+}
+
+.workspace-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.app-shell-content {
+    flex: 1;
+    overflow-y: auto;
+}
