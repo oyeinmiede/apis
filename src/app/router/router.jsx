@@ -3,6 +3,8 @@ import {
 } from "react-router-dom";
 
 import DashboardPage from '../../features/dashboard/pages/DashboardPage'
+import LoginPage from "../../features/auth/pages/LoginPage";
+import SignupPage from "../../features/auth/pages/SignupPage";
 
 
 const router = createBrowserRouter([
@@ -13,12 +15,12 @@ const router = createBrowserRouter([
 
     {
         path: "/login",
-        element: <div>Login</div>,
+        element: <LoginPage />,
     },
 
     {
         path: "/signup",
-        element: <div>Signup</div>,
+        element: <SignupPage />,
     },
 
     {
