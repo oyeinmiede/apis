@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import "../styles/auth-layout.css";
 
-function AuthHeader() {
+function AuthHeader({ mode }) {
+    const isLogin = mode === "login"
     return (
         <header className="auth-header">
             <Link
@@ -14,10 +15,12 @@ function AuthHeader() {
                 <span>Apis</span>
             </Link>
             <Link
-                to="/signup"
+                to={isLogin ? "/signup" : "/login"}
                 className="auth-switch"
             >
-                Sign up
+                {isLogin
+                    ? "Sign up"
+                    : "Sign in"}
             </Link>
         </header>
     );

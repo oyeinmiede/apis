@@ -12,7 +12,7 @@ import '../styles/login.css'
 
 function LoginPage() {
     return (
-        <AuthLayout>
+        <AuthLayout mode="login">
             <AuthModal>
                 <h1>Sign in to Apis</h1>
                 <p>
