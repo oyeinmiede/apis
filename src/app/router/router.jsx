@@ -7,6 +7,8 @@ import DashboardPage from '../../features/dashboard/pages/DashboardPage'
 import LoginPage from "../../features/auth/pages/LoginPage";
 import SignupPage from "../../features/auth/pages/SignupPage";
 import OnboardingPage from "../../features/workspace/pages/OnboardingPage";
+import OnboardingGuard from "@/routes/OnboardingGuard";
+import WorkspaceRequiredRoute from "@/routes/WorkspaceRequiredRoute";
 
 
 const router = createBrowserRouter([
@@ -37,7 +39,9 @@ const router = createBrowserRouter([
         path: "/dashboard",
         element: (
             <ProtectedRoute>
-                <DashboardPage />
+                <WorkspaceRequiredRoute>
+                    <DashboardPage />
+                </WorkspaceRequiredRoute>
             </ProtectedRoute>
         ),
     },
@@ -63,7 +67,9 @@ const router = createBrowserRouter([
         path: "/onboarding",
         element: (
             <ProtectedRoute>
-                <OnboardingPage />
+                <OnboardingGuard>
+                    <OnboardingPage />
+                </OnboardingGuard>
             </ProtectedRoute>
         ),
     },
