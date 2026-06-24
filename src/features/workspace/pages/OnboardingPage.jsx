@@ -9,7 +9,7 @@ import useAuthStore from "@/app/store/authStore";
 import {
     createWorkspace,
     addWorkspaceMember,
-} from "../services/Workspaces";
+} from "../services/workspaces";
 
 function OnboardingPage() {
     const navigate = useNavigate();

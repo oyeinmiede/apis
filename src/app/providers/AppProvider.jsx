@@ -4,12 +4,15 @@ import {
 
 import router from "../router/router";
 import AuthProvider from "./AuthProvider";
+import WorkspaceProvider from "@/features/workspace/providers/WorkSpaceProvider";
 
 
 function AppProvider() {
     return (
         <AuthProvider>
-            <RouterProvider router={router} />
+            <WorkspaceProvider>
+                <RouterProvider router={router} />
+            </WorkspaceProvider>
         </AuthProvider>
     );
 }

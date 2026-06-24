@@ -27,3 +27,20 @@ export async function addWorkspaceMember({
             role,
         });
 }
+
+export async function getUserWorkspaces(
+    userId
+) {
+    return await supabase
+        .from("workspace_members")
+        .select(`
+            role,
+            workspaces (
+                id,
+                name,
+                owner_id,
+                created_at
+            )
+        `)
+        .eq("user_id", userId);
+}
