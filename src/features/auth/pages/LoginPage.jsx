@@ -8,9 +8,41 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { signIn } from "@/services/supabase/auth";
+
 import '../styles/login.css'
 
 function LoginPage() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
+
+    const navigate = useNavigate();
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+
+        setLoading(true);
+        setError("");
+
+        const { error } = await signIn({
+            email,
+            password,
+        });
+
+        if (error) {
+            setError(error.message);
+            setLoading(false);
+            return;
+        }
+
+        navigate("/dashboard");
+    }
+
     return (
         <AuthLayout mode="login">
             <AuthModal>
@@ -19,7 +51,7 @@ function LoginPage() {
                     Welcome back to your hive.
                 </p>
 
-                <form className="auth-form">
+                <form className="auth-form" onSubmit={handleSubmit}>
                     <GoogleButton />
                     <AuthDivider />
 
@@ -27,7 +59,7 @@ function LoginPage() {
                         <label htmlFor="email">
                             Email
                         </label>
-                        <Input id="email" type="email" placeholder="you@example.com" />
+                        <Input id="email" type="email" placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
 
                     <div className="auth-field">
@@ -38,6 +70,8 @@ function LoginPage() {
                         <PasswordInput
                             id="password"
                             placeholder="Enter your password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
 
@@ -52,8 +86,17 @@ function LoginPage() {
                             Forgot password?
                         </a>
                     </div>
-                    <Button type="submit">
-                        Sign in with email
+                    {
+                        error && (
+                            <p className="auth-error">
+                                {error}
+                            </p>
+                        )
+                    }
+                    <Button type="submit" disabled={loading}>
+                        {loading
+                            ? "Signing in..."
+                            : "Sign in with email"}
                     </Button>
                     <p className="auth-help">
                         Having trouble signing in?{" "}
