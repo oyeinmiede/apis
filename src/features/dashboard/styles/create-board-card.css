@@ -1,5 +1,6 @@
 .create-board-card {
     height: 220px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

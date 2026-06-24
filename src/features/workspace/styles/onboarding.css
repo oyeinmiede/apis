@@ -1,0 +1,72 @@
+.onboarding-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(249, 168, 37, 0.08),
+            transparent 40%
+        ),
+        #0b0c0f;
+}
+
+.onboarding-card {
+    width: 100%;
+    max-width: 520px;
+    padding: 40px;
+    border-radius: 28px;
+    background: rgba(17, 18, 22, 0.9);
+    border: 1px solid rgba(255,255,255,0.06);
+    backdrop-filter: blur(16px);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.onboarding-logo {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+}
+
+.onboarding-heading {
+    text-align: center;
+}
+
+.onboarding-heading h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.onboarding-heading p {
+    color: #9ca3af;
+    line-height: 1.6;
+}
+
+.onboarding-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.onboarding-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #d1d5db;
+}
+
+.onboarding-submit {
+    height: 48px;
+    font-weight: 600;
+}
+
+.onboarding-hint {
+    text-align: center;
+    font-size: 13px;
+    color: #6b7280;
+}

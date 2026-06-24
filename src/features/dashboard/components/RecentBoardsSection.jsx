@@ -1,12 +1,17 @@
+import { useState } from "react";
 import BoardCard from "./BoardCard";
 import CreateBoardCard from "./CreateBoardCard";
 import SectionHeader from "./SectionHeader";
 import { Button } from "@/components/ui/button";
-import { recentBoards } from "../data/recentBoards";
+import useBoardStore from "@/features/boards/store/boardStore";
+import CreateBoardModal from "@/features/boards/components/CreateBoardModal";
 
 import "../styles/recent-boards-section.css";
 
 function RecentBoardsSection() {
+    const boards = useBoardStore((state) => state.boards);
+    const [open, setOpen] = useState(false);
+
     return (
         <section>
             <SectionHeader
@@ -19,22 +24,33 @@ function RecentBoardsSection() {
             />
 
             <div className="boards-grid">
-                <CreateBoardCard />
+                {boards.length > 0 ? (
+                    <>
+                    <button onClick={() => setOpen(true)} >
+                        <CreateBoardCard/>
+                    </button>
+                        
 
-                {recentBoards.length > 0 ? (
-                    recentBoards.map((board) => (
-                        <BoardCard
-                            key={board.id}
-                            title={board.title}
-                            updatedAt={board.updatedAt}
-                        />
-                    ))
+                        {boards.map((board) => (
+                            <BoardCard
+                                key={board.id}
+                                title={board.title}
+                                updatedAt={board.updatedAt}
+                            />
+                        ))}
+                    </>
                 ) : (
-                    <p>
-                        No boards yet.
-                    </p>
+                    <div className="empty-state">
+                        <h3>No boards yet.</h3>
+                        <p>Create your first board to start building.</p>
+                        <Button variant="secondary" onClick={() => setOpen(true)}>
+                            Create your first Board
+                        </Button>
+                    </div>
                 )}
             </div>
+
+            <CreateBoardModal open={open} onClose={() => setOpen(false)} />
         </section>
     );
 }

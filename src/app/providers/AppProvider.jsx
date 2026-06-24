@@ -5,13 +5,16 @@ import {
 import router from "../router/router";
 import AuthProvider from "./AuthProvider";
 import WorkspaceProvider from "@/features/workspace/providers/WorkSpaceProvider";
+import BoardProvider from "@/features/boards/providers/BoardProvider";
 
 
 function AppProvider() {
     return (
         <AuthProvider>
             <WorkspaceProvider>
-                <RouterProvider router={router} />
+                <BoardProvider>
+                    <RouterProvider router={router} />
+                </BoardProvider>
             </WorkspaceProvider>
         </AuthProvider>
     );
