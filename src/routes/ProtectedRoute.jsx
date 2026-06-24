@@ -10,6 +10,16 @@ function ProtectedRoute({
             (state) => state.user
         );
 
+    const loading =
+        useAuthStore(
+            (state) =>
+                state.loading
+        );
+
+    if(loading) {
+        return null
+    }
+
     if (!user) {
         return (
             <Navigate

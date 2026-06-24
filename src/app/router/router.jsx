@@ -6,6 +6,7 @@ import PublicOnlyRoute from "@/routes/PublicOnlyRoute";
 import DashboardPage from '../../features/dashboard/pages/DashboardPage'
 import LoginPage from "../../features/auth/pages/LoginPage";
 import SignupPage from "../../features/auth/pages/SignupPage";
+import OnboardingPage from "../../features/workspace/pages/OnboardingPage";
 
 
 const router = createBrowserRouter([
@@ -55,6 +56,14 @@ const router = createBrowserRouter([
         element: (
             <ProtectedRoute>
                 <div>Settings</div>
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: "/onboarding",
+        element: (
+            <ProtectedRoute>
+                <OnboardingPage />
             </ProtectedRoute>
         ),
     },

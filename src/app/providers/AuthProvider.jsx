@@ -10,6 +10,12 @@ function AuthProvider({
             (state) => state.setSession
         );
 
+    const setLoading =
+        useAuthStore(
+            (state) =>
+                state.setLoading
+        );
+
     useEffect(() => {
         supabase.auth
             .getSession()
@@ -17,6 +23,7 @@ function AuthProvider({
                 setSession(
                     data.session
                 );
+                setLoading(false)
             });
 
         const {
