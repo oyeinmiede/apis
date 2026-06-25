@@ -10,6 +10,14 @@ export async function getBoards(workspaceId) {
         });
 }
 
+export async function getBoard(boardId) {
+    return await supabase
+        .from("boards")
+        .select("*")
+        .eq("id", boardId)
+        .single();
+}
+
 export async function createBoard({
     workspaceId,
     userId,

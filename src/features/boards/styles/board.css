@@ -1,0 +1,211 @@
+.board-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #0b0c0f;
+}
+
+.board-toolbar {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    background: #111318;
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
+}
+
+.board-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.board-brand img {
+    width: 20px;
+    height: 20px;
+}
+
+.board-title {
+    font-size: 15px;
+    color: #d1d5db;
+}
+
+.board-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.board-actions button {
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: #1b1f27;
+    border: 1px solid rgba(255, 255, 255, .08);
+    color: white;
+}
+
+.canvas-wrapper {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.tl-background {
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.08) 1px,
+            transparent 1px
+        ) !important;
+
+    background-size:
+        50px 50px !important;
+}
+
+.canvas-controls {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    display: flex;
+    gap: 8px;
+}
+
+.canvas-controls button {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: #171a21;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.tool-rail {
+    position: fixed;
+    left: 24px;
+    top: 98px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 20px;
+    background: rgba(17, 18, 22, .92);
+    border: 1px solid rgba(255, 255, 255, .06);
+    backdrop-filter: blur(20px);
+    z-index: 20;
+}
+
+.undo-redo-dock {
+    position: fixed;
+    left: 24px;
+    top: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 20px;
+    background: rgba(17, 18, 22, .92);
+    border: 1px solid rgba(255, 255, 255, .06);
+    backdrop-filter: blur(20px);
+    z-index: 20;
+}
+
+.zoom-dock {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 20px;
+    background: rgba(17, 18, 22, .92);
+    border: 1px solid rgba(255, 255, 255, .06);
+    backdrop-filter: blur(20px);
+    z-index: 20;
+}
+
+.tool-rail > button,
+.undo-redo-dock button,
+.zoom-dock button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    color: #d1d5db;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.tool-rail button:hover,
+.undo-redo-dock button:hover,
+.zoom-dock button:hover {
+    background: rgba(249, 168, 37, .12);
+    color: #F9A825;
+}
+
+.tool-button {
+    position: relative;
+}
+
+.tool-tooltip {
+    position: absolute;
+    left: calc(100% + 12px);
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: #16181d;
+    border: 1px solid rgba(255, 255, 255, .08);
+    color: #f3f4f6;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.15s ease;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .3);
+}
+
+.tool-button:hover .tool-tooltip {
+    opacity: 1;
+}
+
+.tool-divider {
+    height: 1px;
+    margin: 6px 0;
+    background: rgba(255, 255, 255, .08);
+}
+
+.tool-button.hexa-tool {
+    color: #F9A825;
+}
+
+.tool-button.hexa-tool:hover {
+    background: rgba(249, 168, 37, .14);
+}
+
+.tool-button.active {
+    background:rgba(249,168,37,.16);
+    color:#F9A825;
+}
+
+.canvas-wrapper > .sticky-note {
+    z-index: 10;
+}
+
+.zoom-dock span {
+    min-width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .85rem;
+    font-weight: 500;
+}

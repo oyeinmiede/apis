@@ -9,7 +9,7 @@ import SignupPage from "../../features/auth/pages/SignupPage";
 import OnboardingPage from "../../features/workspace/pages/OnboardingPage";
 import OnboardingGuard from "@/routes/OnboardingGuard";
 import WorkspaceRequiredRoute from "@/routes/WorkspaceRequiredRoute";
-
+import BoardPage from "@/features/boards/pages/BoardPage";
 
 const router = createBrowserRouter([
     {
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
         path: "/board/:id",
         element: (
             <ProtectedRoute>
-                <div>Board</div>
+                <BoardPage />
             </ProtectedRoute>
         ),
     },

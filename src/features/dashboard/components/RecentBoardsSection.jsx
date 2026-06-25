@@ -36,6 +36,7 @@ function RecentBoardsSection() {
                                 key={board.id}
                                 title={board.title}
                                 updatedAt={board.updatedAt}
+                                board={board}
                             />
                         ))}
                     </>
