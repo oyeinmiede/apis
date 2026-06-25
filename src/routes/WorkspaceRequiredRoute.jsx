@@ -1,16 +1,26 @@
 import { Navigate } from "react-router-dom";
-
-import useWorkspaceStore
-from "@/app/store/workspaceStore";
+import useWorkspaceStore from "@/app/store/workspaceStore";
 
 function WorkspaceRequiredRoute({
     children,
 }) {
     const workspace =
         useWorkspaceStore(
-            (state) =>
-                state.currentWorkspace
+            (state) => state.currentWorkspace
         );
+
+    const loading =
+        useWorkspaceStore(
+            (state) => state.loading
+        );
+
+    if (loading) {
+        return (
+            <div className="auth-loading">
+                Loading...
+            </div>
+        );
+    }
 
     if (!workspace) {
         return (

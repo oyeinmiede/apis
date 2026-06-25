@@ -17,23 +17,23 @@ function AuthProvider({
         );
 
     useEffect(() => {
-        supabase.auth
-            .getSession()
-            .then(({ data }) => {
-                setSession(
-                    data.session
-                );
-                setLoading(false)
-            });
+        async function initialize() {
+            const { data } =
+                await supabase.auth.getSession();
+
+            setSession(data.session);
+            setLoading(false);
+        }
+
+        initialize();
 
         const {
             data: listener,
         } =
             supabase.auth.onAuthStateChange(
                 (_, session) => {
-                    setSession(
-                        session
-                    );
+                    setSession(session);
+                    setLoading(false);
                 }
             );
 
