@@ -51,7 +51,7 @@ function BoardPage() {
     return (
         <div className="board-page">
             <BoardToolbar board={board} />
-            <Canvas activeTool={activeTool} items={canvasItems} setItems={setCanvasItems} setEditor={setEditor} />
+            <Canvas activeTool={activeTool} items={canvasItems} setItems={setCanvasItems} setEditor={setEditor} boardId={board.id} />
             <ToolRail editor={editor} activeTool={activeTool} setActiveTool={setActiveTool} />
             <UndoRedoDock editor={editor} />
             <ZoomDock editor={editor} />
