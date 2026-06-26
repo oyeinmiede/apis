@@ -8,7 +8,7 @@ function Sidebar() {
         <aside className="sidebar">
             <div className="sidebar-brand">
                 <div className="brand-logo">
-                    A
+                    <img src="/logo-apis.png" alt="" />
                 </div>
                 <span>Apis</span>
             </div>

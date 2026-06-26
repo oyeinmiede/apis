@@ -8,24 +8,21 @@
 }
 
 .sidebar-brand {
-    height: 72px;
+    height: 92px;
     display: flex;
     align-items: center;
     gap: 12px;
     padding: 0 24px;
-    border-bottom: 1px solid var(--border-primary);
     font-family: "Satoshi";
     font-weight: 700;
+    font-size: 1.8rem;
 }
 
 .brand-logo {
-    width: 34px;
-    height: 34px;
+    width: 45px;
+    height: 45px;
     display: grid;
     place-items: center;
-    border-radius: 10px;
-    background: var(--accent1);
-    color: white;
 }
 
 .sidebar-nav {
