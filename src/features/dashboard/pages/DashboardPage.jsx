@@ -8,16 +8,17 @@ import HiveActivityPanel from "../components/HiveActivityPanel";
 
 import '../styles/dashboard-layout.css'
 import TemplateSection from "../components/TemplateSection";
-
-const user = {
-    name: "Gabrielle",
-};
+import useProfileStore from "@/app/store/profileStore";
 
 function DashboardPage() {
+    const profile = useProfileStore(
+        state => state.profile
+    );
+
     return (
         <AppShell>
             <PageContainer>
-                <GreetingSection user={user} />
+                <GreetingSection profile={profile}/>
                 <AiLauncher />
                 <div className="dashboard-grid">
                     <div><RecentBoardsSection /></div>

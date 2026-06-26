@@ -1,13 +1,98 @@
 .topbar {
     height: 72px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding-inline: 24px;
+    align-items: center;
+    padding: 0 var(--space-6);
+    background: var(--bg-primary);
     border-bottom: 1px solid var(--border-primary);
-    background: var(--bg-secondary);
 }
 
-.topbar-user {
+.topbar-search {
+    width: 340px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: 0 var(--space-4);
+    background: var(--surface-1);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    transition: var(--transition);
+}
+
+.topbar-search:focus-within {
+    border-color: var(--accent);
+}
+
+.topbar-search svg {
+    color: var(--text-muted);
+}
+
+.topbar-search input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text-primary);
+    font-size: .95rem;
+}
+
+.topbar-search input::placeholder {
+    color: var(--text-muted);
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.topbar-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    background: var(--surface-1);
     color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.topbar-icon:hover {
+    background: var(--surface-2);
+}
+
+.topbar-profile {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: 6px 12px;
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    background: var(--surface-1);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.topbar-profile:hover {
+    background: var(--surface-2);
+}
+
+.topbar-profile span {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.profile-avatar {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--accent1);
+    color: white;
+    font-weight: 700;
 }
