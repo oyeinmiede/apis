@@ -1,6 +1,7 @@
 import './styles/sidebar.css'
 import { NavLink } from "react-router-dom"
 import { navigationItems, settingsItem } from "./navigation"
+import WorkspaceSwitcher from "./WorkspaceSwitcher";
 
 function Sidebar() {
     return (
@@ -11,6 +12,7 @@ function Sidebar() {
                 </div>
                 <span>Apis</span>
             </div>
+            <WorkspaceSwitcher />
             <nav className="sidebar-nav">
                 {navigationItems.map(({ label, path, icon: Icon }) => (
                     <NavLink

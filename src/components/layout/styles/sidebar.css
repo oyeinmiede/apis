@@ -24,7 +24,7 @@
     display: grid;
     place-items: center;
     border-radius: 10px;
-    background: var(--accent);
+    background: var(--accent1);
     color: white;
 }
 
@@ -57,7 +57,7 @@
 
 .nav-item.active {
     background: var(--accent-soft);
-    color: var(--accent);
+    color: var(--accent1);
 }
 
 .settings-link {

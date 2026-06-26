@@ -22,7 +22,7 @@
 }
 
 .topbar-search:focus-within {
-    border-color: var(--accent);
+    border-color: var(--accent1);
 }
 
 .topbar-search svg {

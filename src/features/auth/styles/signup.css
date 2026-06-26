@@ -36,7 +36,7 @@
 }
 
 .otp-box:focus {
-    border-color: var(--accent);
+    border-color: var(--accent1);
     box-shadow: 0 0 0 3px var(--accent-soft);
     transform: translateY(-2px);
 }

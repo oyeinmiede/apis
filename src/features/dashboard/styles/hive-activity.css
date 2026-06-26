@@ -16,7 +16,7 @@
 
 
 .hive-activity-header svg {
-    color: var(--accent);
+    color: var(--accent1);
 }
 
 
@@ -45,7 +45,7 @@
     place-items: center;
     border-radius: 50%;
     background: var(--accent-soft);
-    color: var(--accent);
+    color: var(--accent1);
     font-size: 13px;
     font-weight: 600;
 }

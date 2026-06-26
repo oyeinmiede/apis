@@ -39,7 +39,7 @@
 
 .auth-options a {
     font-size: 14px;
-    color: var(--accent);
+    color: var(--accent1);
     text-decoration: none;
     transition: var(--transition);
 }
@@ -62,7 +62,7 @@
 }
 
 .auth-help a {
-    color: var(--accent);
+    color: var(--accent1);
     text-decoration: none;
     font-weight: 500;
 }

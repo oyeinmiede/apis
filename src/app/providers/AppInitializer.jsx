@@ -15,7 +15,11 @@ function AppInitializer({ children }) {
         (s) => s.setSession
     );
 
-    const setWorkspace = useWorkspaceStore(
+    const setWorkspaces = useWorkspaceStore(
+        (s) => s.setWorkspaces
+    );
+
+    const setCurrentWorkspace = useWorkspaceStore(
         (s) => s.setCurrentWorkspace
     );
 
@@ -45,16 +49,29 @@ function AppInitializer({ children }) {
                         session.user.id
                     );
 
-                const workspace =
-                    workspaceResult.data?.[0]?.workspaces ??
+                const workspaces =
+                    workspaceResult.data?.map(
+                        (item) => item.workspaces
+                    ) ?? [];
+
+                setWorkspaces(workspaces);
+
+                const savedWorkspaceId =
+                    localStorage.getItem("currentWorkspace");
+
+                const currentWorkspace =
+                    workspaces.find(
+                        workspace => workspace.id === savedWorkspaceId
+                    ) ??
+                    workspaces[0] ??
                     null;
 
-                setWorkspace(workspace);
+                setCurrentWorkspace(currentWorkspace);
 
-                if (workspace) {
+                if (currentWorkspace) {
                     const boards =
                         await getBoards(
-                            workspace.id
+                            currentWorkspace.id
                         );
 
                     setBoards(

@@ -14,7 +14,7 @@
 }
 
 .create-board-card:hover {
-    border-color: var(--accent);
+    border-color: var(--accent1);
     background: var(--accent-soft);
 }
 
