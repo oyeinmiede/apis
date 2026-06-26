@@ -12,6 +12,7 @@ import WorkspaceRequiredRoute from "@/routes/WorkspaceRequiredRoute";
 import BoardPage from "@/features/boards/pages/BoardPage";
 import VerifyEmailPage from "@/features/auth/pages/VerifyEmail";
 import AuthCallback from "@/features/auth/callback/AuthCallback";
+import BoardsPage from "@/features/boards/pages/BoardsPage";
 
 const router = createBrowserRouter([
     {
@@ -82,6 +83,14 @@ const router = createBrowserRouter([
                 <VerifyEmailPage />
             </PublicOnlyRoute>
         )
+    },
+    {
+        path: "/boards",
+        element: (
+            <ProtectedRoute>
+                <BoardsPage />
+            </ProtectedRoute>
+        ),
     },
     {
         path: "/auth/callback",
