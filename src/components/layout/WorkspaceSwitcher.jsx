@@ -13,11 +13,17 @@ import "./styles/workspace-switcher.css";
 function WorkspaceSwitcher() {
     const [open, setOpen] = useState(false);
 
-    const {
-        currentWorkspace,
-        workspaces,
-        setCurrentWorkspace,
-    } = useWorkspaceStore();
+    const currentWorkspace = useWorkspaceStore(
+        state => state.currentWorkspace
+    );
+    
+    const workspaces = useWorkspaceStore(
+        state => state.workspaces
+    );
+    
+    const setCurrentWorkspace = useWorkspaceStore(
+        state => state.setCurrentWorkspace
+    );
 
     const [showCreate, setShowCreate] =
         useState(false);

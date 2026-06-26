@@ -1,42 +1,35 @@
 import { useEffect } from "react";
+
 import useWorkspaceStore from "@/app/store/workspaceStore";
 import useBoardStore from "../store/boardStore";
 
-import {
-    getBoards,
-} from "../services/boards";
+import { getBoards } from "../services/boards";
 
-function BoardProvider({
-    children,
-}) {
-    const workspace =
+function BoardProvider({ children }) {
+    const currentWorkspace =
         useWorkspaceStore(
-            (state) =>
-                state.currentWorkspace
+            state => state.currentWorkspace
         );
 
     const setBoards =
         useBoardStore(
-            (state) =>
-                state.setBoards
+            state => state.setBoards
         );
 
-    useEffect(() => {
-        if (!workspace) return;
-
-        async function loadBoards() {
-            const { data } =
-                await getBoards(
-                    workspace.id
-                );
-
-            if (data) {
-                setBoards(data);
+        useEffect(() => {
+            async function loadBoards() {
+                if (!currentWorkspace) {
+                    setBoards([]);
+                    return;
+                }
+        
+                const { data } = await getBoards(currentWorkspace.id);
+        
+                setBoards(data ?? []);
             }
-        }
-
-        loadBoards();
-    }, [workspace]);
+        
+            loadBoards();
+        }, [currentWorkspace?.id]);
 
     return children;
 }

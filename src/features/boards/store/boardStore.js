@@ -4,8 +4,9 @@ const useBoardStore = create(
     (set) => ({
         boards: [],
 
-        setBoards: (boards) =>
-            set({ boards }),
+        setBoards: (boards) =>{
+            set({ boards })
+        },
 
         addBoard: (board) =>
             set((state) => ({

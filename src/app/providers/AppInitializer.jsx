@@ -70,13 +70,8 @@ function AppInitializer({ children }) {
 
                 if (currentWorkspace) {
                     const boards =
-                        await getBoards(
-                            currentWorkspace.id
-                        );
-
-                    setBoards(
-                        boards.data ?? []
-                    );
+                        await getBoards(currentWorkspace.id);
+                    setBoards(boards.data ?? []);
                 }
             }
 
