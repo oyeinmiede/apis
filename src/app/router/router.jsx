@@ -11,6 +11,7 @@ import OnboardingGuard from "@/routes/OnboardingGuard";
 import WorkspaceRequiredRoute from "@/routes/WorkspaceRequiredRoute";
 import BoardPage from "@/features/boards/pages/BoardPage";
 import VerifyEmailPage from "@/features/auth/pages/VerifyEmail";
+import AuthCallback from "@/features/auth/callback/AuthCallback";
 
 const router = createBrowserRouter([
     {
@@ -81,6 +82,10 @@ const router = createBrowserRouter([
                 <VerifyEmailPage />
             </PublicOnlyRoute>
         )
+    },
+    {
+        path: "/auth/callback",
+        element: <AuthCallback />,
     },
 ]);
 

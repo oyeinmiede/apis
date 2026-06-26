@@ -40,8 +40,12 @@ export async function signIn({
 }
 
 export async function signInWithGoogle() {
-    return await supabase.auth.signInWithOAuth({
+    return supabase.auth.signInWithOAuth({
         provider: "google",
+        options: {
+            redirectTo:
+                `${window.location.origin}/auth/callback`,
+        },
     });
 }
 
