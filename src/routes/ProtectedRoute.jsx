@@ -6,18 +6,6 @@ function ProtectedRoute({ children }) {
         (state) => state.user
     );
 
-    const loading = useAuthStore(
-        (state) => state.loading
-    );
-
-    if (loading) {
-        return (
-            <div className="auth-loading">
-                Loading...
-            </div>
-        );
-    }
-
     if (!user) {
         return (
             <Navigate

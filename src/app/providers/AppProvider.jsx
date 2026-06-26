@@ -3,20 +3,13 @@ import {
 } from "react-router-dom";
 
 import router from "../router/router";
-import AuthProvider from "./AuthProvider";
-import WorkspaceProvider from "@/features/workspace/providers/WorkSpaceProvider";
-import BoardProvider from "@/features/boards/providers/BoardProvider";
-
+import AppInitializer from "./AppInitializer";
 
 function AppProvider() {
     return (
-        <AuthProvider>
-            <WorkspaceProvider>
-                <BoardProvider>
-                    <RouterProvider router={router} />
-                </BoardProvider>
-            </WorkspaceProvider>
-        </AuthProvider>
+        <AppInitializer>
+            <RouterProvider router={router} />
+        </AppInitializer>
     );
 }
 

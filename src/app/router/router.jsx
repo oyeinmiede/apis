@@ -10,6 +10,7 @@ import OnboardingPage from "../../features/workspace/pages/OnboardingPage";
 import OnboardingGuard from "@/routes/OnboardingGuard";
 import WorkspaceRequiredRoute from "@/routes/WorkspaceRequiredRoute";
 import BoardPage from "@/features/boards/pages/BoardPage";
+import VerifyEmailPage from "@/features/auth/pages/VerifyEmail";
 
 const router = createBrowserRouter([
     {
@@ -72,6 +73,14 @@ const router = createBrowserRouter([
                 </OnboardingGuard>
             </ProtectedRoute>
         ),
+    },
+    {
+        path: "/verify-email",
+        element: (
+            <PublicOnlyRoute>
+                <VerifyEmailPage />
+            </PublicOnlyRoute>
+        )
     },
 ]);
 

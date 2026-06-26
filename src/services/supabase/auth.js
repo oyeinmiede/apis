@@ -10,6 +10,25 @@ export async function signUp({
     });
 }
 
+export async function verifyEmail({
+    email,
+    token,
+}) {
+    return await supabase.auth.verifyOtp({
+        email,
+        token,
+        type: "signup",
+    });
+}
+
+
+export async function resendEmailOtp(email){
+    return await supabase.auth.resend({
+        email,
+        type: "signup",
+    });
+}
+
 export async function signIn({
     email,
     password,

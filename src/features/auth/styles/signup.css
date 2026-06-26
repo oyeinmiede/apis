@@ -1,0 +1,71 @@
+.otp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.otp h1 {
+    font-size: 2rem;
+}
+
+.otp-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.otp-box {
+    width: 88px;
+    min-height: 96px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--surface-3);
+    color: var(--text-primary);
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    outline: none;
+    transition: 
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.15s ease;
+}
+
+.otp-box:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+    transform: translateY(-2px);
+}
+
+.otp-box:not(:placeholder-shown) {
+    border-color: var(--accent-hover);
+}
+
+
+.auth-link {
+    display: block;
+    margin: 20px auto 0;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.auth-link:hover {
+    opacity: 0.75;
+}
+
+
+.auth-error {
+    color: var(--destructive);
+    font-size: 14px;
+    text-align: center;
+    margin-top: -8px;
+}

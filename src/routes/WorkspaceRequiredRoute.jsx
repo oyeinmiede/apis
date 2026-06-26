@@ -9,19 +9,6 @@ function WorkspaceRequiredRoute({
             (state) => state.currentWorkspace
         );
 
-    const loading =
-        useWorkspaceStore(
-            (state) => state.loading
-        );
-
-    if (loading) {
-        return (
-            <div className="auth-loading">
-                Loading...
-            </div>
-        );
-    }
-
     if (!workspace) {
         return (
             <Navigate
