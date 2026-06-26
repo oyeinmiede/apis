@@ -8,16 +8,19 @@ import AppInitializer from "./AppInitializer";
 
 import ProfileProvider from "@/features/settings/providers/ProfileProviders";
 import BoardProvider from "@/features/boards/providers/BoardProvider";
+import ThemeProvider from "./ThemeProvider";
 
 function AppProvider() {
     return (
-        <AppInitializer>
-            <ProfileProvider>
-                <BoardProvider>
-                    <RouterProvider router={router} />
-                </BoardProvider>
-            </ProfileProvider>
-        </AppInitializer>
+        <ThemeProvider>
+            <AppInitializer>
+                <ProfileProvider>
+                    <BoardProvider>
+                        <RouterProvider router={router} />
+                    </BoardProvider>
+                </ProfileProvider>
+            </AppInitializer>
+        </ThemeProvider>
     );
 }
 

@@ -1,0 +1,325 @@
+.workspace-settings-page {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+.workspace-settings-page-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.workspace-list {
+    background: var(--surface-1);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    top: 88px;
+}
+
+.workspace-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.workspace-group h3 {
+    font-size: .82rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.workspace-empty {
+    font-size: .85rem;
+    color: var(--text-muted);
+    padding: 4px 0;
+}
+
+.workspace-divider {
+    height: 1px;
+    background: var(--border-primary);
+    margin: 2px 0;
+}
+
+.workspace-list-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: var(--radius-md);
+    background: transparent;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.workspace-list-item:hover {
+    background: var(--surface-2);
+}
+
+.workspace-list-item.active {
+    background: var(--accent-soft);
+}
+
+.workspace-list-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+}
+
+.workspace-list-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.workspace-list-info span {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.workspace-list-info small {
+    color: var(--text-muted);
+    font-size: .75rem;
+}
+
+.workspace-card {
+    background: var(--surface-1);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.workspace-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.workspace-preview {
+    width: 70px;
+    height: 70px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.workspace-header h2 {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+}
+
+.workspace-header p {
+    font-size: .9rem;
+    color: var(--text-secondary);
+}
+
+.workspace-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.workspace-card-header h2 {
+    font-size: 1.05rem;
+}
+
+.workspace-card-header span {
+    font-size: .82rem;
+    color: var(--text-muted);
+}
+
+.workspace-card label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: .88rem;
+    font-weight: 500;
+}
+
+.emoji-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+}
+
+.emoji-option {
+    height: 48px;
+    border: none;
+    border-radius: 12px;
+    background: var(--surface-2);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.emoji-option:hover {
+    transform: translateY(-2px);
+}
+
+.emoji-option.active {
+    outline: 2px solid var(--accent1);
+    background: var(--accent-soft);
+}
+
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 12px;
+}
+
+.color-option {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.color-option.active {
+    outline: 3px solid var(--text-primary);
+    outline-offset: 3px;
+}
+
+.member-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.member-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px;
+    border-radius: var(--radius-md);
+    background: var(--surface-2);
+}
+
+.member-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.member-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.member-avatar.initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-soft);
+    color: var(--accent1);
+    font-weight: 700;
+}
+
+.member-name {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+}
+
+.member-username {
+    font-size: .8rem;
+    color: var(--text-muted);
+}
+
+.member-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.role-select {
+    width: 120px;
+}
+
+.role-pill {
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--surface-3);
+    font-size: .8rem;
+    text-transform: capitalize;
+}
+
+.workspace-error {
+    font-size: .82rem;
+    color: #ef4444;
+}
+
+.danger-card {
+    border-color: #ef4444;
+}
+
+.danger-text {
+    font-size: .9rem;
+    color: var(--text-secondary);
+}
+
+.danger-input {
+    height: 42px;
+    padding: 0 14px;
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    background: var(--surface-2);
+    color: var(--text-primary);
+}
+
+.danger-input:focus {
+    outline: none;
+    border-color: #ef4444;
+}
+
+@media(max-width:1000px) {
+
+    .workspace-settings {
+        grid-template-columns: 1fr;
+    }
+
+    .workspace-list {
+        position: static;
+    }
+
+    .emoji-grid,
+    .color-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .member-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .member-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+}

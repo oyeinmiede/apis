@@ -13,6 +13,7 @@ import BoardPage from "@/features/boards/pages/BoardPage";
 import VerifyEmailPage from "@/features/auth/pages/VerifyEmail";
 import AuthCallback from "@/features/auth/callback/AuthCallback";
 import BoardsPage from "@/features/boards/pages/BoardsPage";
+import SettingsPage from "@/features/settings/pages/SeettingsPage";
 
 const router = createBrowserRouter([
     {
@@ -62,7 +63,7 @@ const router = createBrowserRouter([
         path: "/settings",
         element: (
             <ProtectedRoute>
-                <div>Settings</div>
+                <SettingsPage />
             </ProtectedRoute>
         ),
     },

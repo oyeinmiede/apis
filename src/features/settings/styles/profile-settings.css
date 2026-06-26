@@ -1,0 +1,98 @@
+.profile-settings {
+    display: flex;
+    gap: var(--space-7);
+    margin-top: var(--space-6);
+}
+
+.profile-avatar-section {
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    flex-shrink: 0;
+}
+
+.profile-avt {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    border: 2px solid var(--accent1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent1);
+}
+
+.profile-avt img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-fields {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.profile-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.profile-field label {
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.username-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    background: var(--surface-2);
+    overflow: hidden;
+}
+
+.username-input span {
+    padding: 0 14px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    border-right: 1px solid var(--border-primary);
+}
+
+.username-input input {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.username-input input:focus {
+    outline: none;
+}
+
+.profile-save {
+    align-self: flex-start;
+    margin-top: var(--space-2);
+}
+
+@media (max-width: 768px) {
+
+    .profile-settings {
+        flex-direction: column;
+    }
+
+    .profile-avatar-section {
+        width: 100%;
+    }
+
+}

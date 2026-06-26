@@ -96,3 +96,10 @@
     color: white;
     font-weight: 700;
 }
+
+.profile-avatar-image {
+    width: 34px;
+    max-height: 34px;
+    object-fit: cover;
+    border-radius: 50%;
+}

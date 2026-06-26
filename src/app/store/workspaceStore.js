@@ -11,15 +11,18 @@ const useWorkspaceStore = create((set) => ({
     setWorkspaces: (workspaces) =>
         set({ workspaces }),
 
-    setCurrentWorkspace: (workspace) => {
+    setCurrentWorkspace:(workspace)=>{
+        if(!workspace){
+            localStorage.removeItem("current-workspace");
+            return set({currentWorkspace:null});
+        }
+    
         localStorage.setItem(
             "current-workspace",
             workspace.id
         );
-
-        set({
-            currentWorkspace: workspace,
-        });
+    
+        set({currentWorkspace:workspace});
     },
 
     addWorkspace: (workspace) =>
