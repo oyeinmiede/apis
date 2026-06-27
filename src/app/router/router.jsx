@@ -15,6 +15,7 @@ import AuthCallback from "@/features/auth/callback/AuthCallback";
 import BoardsPage from "@/features/boards/pages/BoardsPage";
 import SettingsPage from "@/features/settings/pages/SeettingsPage";
 import TemplatePage from "@/features/templates/pages/TemplatePage";
+import TeamsPage from "@/features/teams/pages/TeamsPage";
 
 const router = createBrowserRouter([
     {
@@ -65,6 +66,15 @@ const router = createBrowserRouter([
         element: (
             <ProtectedRoute>
                 <TemplatePage />
+            </ProtectedRoute>
+        ),
+    },
+
+    {
+        path: "/teams",
+        element: (
+            <ProtectedRoute>
+                <TeamsPage />
             </ProtectedRoute>
         ),
     },
