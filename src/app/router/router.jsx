@@ -14,6 +14,7 @@ import VerifyEmailPage from "@/features/auth/pages/VerifyEmail";
 import AuthCallback from "@/features/auth/callback/AuthCallback";
 import BoardsPage from "@/features/boards/pages/BoardsPage";
 import SettingsPage from "@/features/settings/pages/SeettingsPage";
+import TemplatePage from "@/features/templates/pages/TemplatePage";
 
 const router = createBrowserRouter([
     {
@@ -55,6 +56,15 @@ const router = createBrowserRouter([
         element: (
             <ProtectedRoute>
                 <BoardPage />
+            </ProtectedRoute>
+        ),
+    },
+
+    {
+        path: "/templates",
+        element: (
+            <ProtectedRoute>
+                <TemplatePage />
             </ProtectedRoute>
         ),
     },

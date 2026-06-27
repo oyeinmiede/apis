@@ -1,0 +1,140 @@
+.templates-page{
+    display:flex;
+    flex-direction:column;
+    gap:2rem;
+}
+
+.templates-header h1{
+    font-size:2rem;
+    font-weight:700;
+}
+
+.templates-header p{
+    color:var(--text-secondary);
+    margin-top:.35rem;
+}
+
+.templates-banner{
+    display:flex;
+    gap:1rem;
+    align-items:center;
+    padding:1rem 1.25rem;
+    border-radius:16px;
+    border:1px solid var(--border-primary);
+    background:var(--surface-1);
+}
+
+.templates-banner svg{
+    color:var(--text-primary);
+    flex-shrink:0;
+}
+
+.templates-banner h3{
+    margin-bottom:.2rem;
+    font-size:.95rem;
+}
+
+.templates-banner p{
+    font-size:.9rem;
+    color:var(--text-secondary);
+}
+
+.template-filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.75rem;
+}
+
+.template-filters button{
+    border:none;
+    cursor:pointer;
+    padding:.55rem 1rem;
+    border-radius:999px;
+    background:var(--surface-3);
+    color:var(--text-secondary);
+    transition:.2s;
+}
+
+.template-filters button:hover{
+    background:var(--accent-soft);
+}
+
+.template-filters button.active{
+    background:var(--surface-1);
+    color: var(--text-primary);
+}
+
+.templates-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    gap:1.5rem;
+}
+
+.template-page-card{
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    background:var(--surface-1);
+    border:1px solid var(--border-primary);
+    border-radius:var(--radius-xl);
+    transition:var(--transition);
+}
+
+.template-page-card:hover{
+    transform:translateY(-4px);
+    border-color:var(--accent1);
+    box-shadow:var(--shadow);
+}
+
+.template-cover{
+    height:170px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.template-emoji{
+    font-size:4rem;
+}
+
+.template-body{
+    display:flex;
+    flex-direction:column;
+    gap:var(--space-2);
+    padding:var(--space-5);
+    flex:1;
+}
+
+.template-category{
+    width:max-content;
+    padding:4px 12px;
+    border-radius:999px;
+    background:var(--accent-soft);
+    color:var(--accent1);
+    font-size:.75rem;
+    font-weight:600;
+}
+
+.template-body h3{
+    font-size:1.15rem;
+    color:var(--text-primary);
+}
+
+.template-body p{
+    color:var(--text-secondary);
+    line-height:1.6;
+    flex:1;
+}
+
+.template-page-card button{
+    width: max-content;
+    margin:0 var(--space-4) var(--space-4);
+    justify-content:space-between;
+    border:1px solid var(--border-primary);
+    background:var(--surface-2);
+}
+
+.template-page-card button:hover{
+    background:var(--accent-soft);
+    color:var(--accent1);
+}
