@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    background: #0b0c0f;
+    background: var(--surface-3);
 }
 
 .board-toolbar {
@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 24px;
-    background: #111318;
+    background: var(--surface-1);
     border-bottom: 1px solid rgba(255, 255, 255, .06);
 }
 
@@ -25,13 +25,13 @@
 }
 
 .board-brand img {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 }
 
 .board-title {
     font-size: 15px;
-    color: #d1d5db;
+    color: var(--text-primary);
 }
 
 .board-actions {
@@ -42,9 +42,9 @@
 .board-actions button {
     padding: 8px 14px;
     border-radius: 10px;
-    background: #1b1f27;
-    border: 1px solid rgba(255, 255, 255, .08);
-    color: white;
+    background: var(--accent1);
+    border: 1px solid var(--border-primary);
+    color: var(--text-secondary);
 }
 
 .canvas-wrapper {
@@ -58,7 +58,7 @@
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,.08) 1px,
+            var(--accent-hover) 1px,
             transparent 1px
         ) !important;
 
@@ -78,8 +78,8 @@
     width: 40px;
     height: 40px;
     border-radius: 12px;
-    background: #171a21;
-    color: white;
+    background: var(--accent-1);
+    color: var(--text-primary);
     border: 1px solid rgba(255, 255, 255, .08);
 }
 
@@ -92,8 +92,8 @@
     gap: 8px;
     padding: 10px;
     border-radius: 20px;
-    background: rgba(17, 18, 22, .92);
-    border: 1px solid rgba(255, 255, 255, .06);
+    background: var(--surface-1);
+    border: 1px solid var(--surface-2);
     backdrop-filter: blur(20px);
     z-index: 20;
 }
@@ -107,8 +107,8 @@
     gap: 8px;
     padding: 10px;
     border-radius: 20px;
-    background: rgba(17, 18, 22, .92);
-    border: 1px solid rgba(255, 255, 255, .06);
+    background: var(--surface-1);
+    border: 1px solid var(--surface-2);
     backdrop-filter: blur(20px);
     z-index: 20;
 }
@@ -122,8 +122,8 @@
     gap: 10px;
     padding: 10px 14px;
     border-radius: 20px;
-    background: rgba(17, 18, 22, .92);
-    border: 1px solid rgba(255, 255, 255, .06);
+    background: var(--surface-1);
+    border: 1px solid var(--surface-2);
     backdrop-filter: blur(20px);
     z-index: 20;
 }
@@ -139,7 +139,7 @@
     border: none;
     border-radius: 12px;
     background: transparent;
-    color: #d1d5db;
+    color: var(--text-secondary);
     cursor: pointer;
     transition: .2s ease;
 }
@@ -147,8 +147,8 @@
 .tool-rail button:hover,
 .undo-redo-dock button:hover,
 .zoom-dock button:hover {
-    background: rgba(249, 168, 37, .12);
-    color: #F9A825;
+    background: var(--accent-soft);
+    color: var(--accent-1);
 }
 
 .tool-button {
@@ -162,9 +162,9 @@
     transform: translateY(-50%);
     padding: 8px 12px;
     border-radius: 10px;
-    background: #16181d;
+    background: var(--surface-2);
     border: 1px solid rgba(255, 255, 255, .08);
-    color: #f3f4f6;
+    color: var(--text-secondary);
     font-size: 13px;
     font-weight: 500;
     white-space: nowrap;
@@ -185,16 +185,17 @@
 }
 
 .tool-button.hexa-tool {
-    color: #F9A825;
+    color: var(--accent1);
 }
 
 .tool-button.hexa-tool:hover {
-    background: rgba(249, 168, 37, .14);
+    background: var(--accent-soft);
+    color: var(--accent1);
 }
 
 .tool-button.active {
-    background:rgba(249,168,37,.16);
-    color:#F9A825;
+    background:var(--accent-soft);
+    color: var(--accent1);
 }
 
 .canvas-wrapper > .sticky-note {
