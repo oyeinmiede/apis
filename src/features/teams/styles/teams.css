@@ -145,6 +145,7 @@
 .team-profile-dialog{
     max-width:650px;
     padding: 20px;
+    background-color: var(--surface-3);
 }
 
 .team-profile{
