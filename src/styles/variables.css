@@ -1,8 +1,4 @@
 :root {
-    --accent1: #b87333;
-    --accent-hover: #c98547;
-    --accent-soft: rgba(184, 115, 51, 0.12);
-
     --honey: #ffc107;
 
     --radius-sm: 4px;
@@ -11,7 +7,7 @@
     --radius-xl: 20px;
 
     --shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
-    --transition: 150ms ease;
+    --transition: .15s ease;
 
     --sidebar-expanded: 260px;
     --sidebar-collapsed: 72px;
