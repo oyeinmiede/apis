@@ -4,20 +4,13 @@ import useWorkspaceStore from "@/app/store/workspaceStore";
 function WorkspaceRequiredRoute({
     children,
 }) {
-    const workspace =
-        useWorkspaceStore(
-            (state) => state.currentWorkspace
-        );
+    const workspace = useWorkspaceStore((state) => state.currentWorkspace);
 
     if (!workspace) {
         return (
-            <Navigate
-                to="/onboarding"
-                replace
-            />
+            <Navigate to="/onboarding" replace />
         );
     }
-
     return children;
 }
 

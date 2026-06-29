@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 const defaultTheme = {
-    mode: "dark",
+    mode: "light",
     accent: "bronze",
 };
 

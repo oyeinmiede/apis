@@ -1,8 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-function BoardToolbar({
-    board,
-}) {
+function BoardToolbar({ board, }) {
     const navigate = useNavigate()
 
     return (

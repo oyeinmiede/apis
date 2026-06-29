@@ -1,32 +1,15 @@
 import { useState } from "react";
-import {
-    ChevronDown,
-    Check,
-    Plus,
-    Settings,
-} from "lucide-react";
-
+import { ChevronDown, Check, Plus, Settings } from "lucide-react";
 import useWorkspaceStore from "@/app/store/workspaceStore";
 import CreateWorkspaceModal from "@/features/workspace/components/createWorkSpaceModal";
 import "./styles/workspace-switcher.css";
 
 function WorkspaceSwitcher() {
     const [open, setOpen] = useState(false);
-
-    const currentWorkspace = useWorkspaceStore(
-        state => state.currentWorkspace
-    );
-    
-    const workspaces = useWorkspaceStore(
-        state => state.workspaces
-    );
-    
-    const setCurrentWorkspace = useWorkspaceStore(
-        state => state.setCurrentWorkspace
-    );
-
-    const [showCreate, setShowCreate] =
-        useState(false);
+    const currentWorkspace = useWorkspaceStore(state => state.currentWorkspace);
+    const workspaces = useWorkspaceStore(state => state.workspaces);
+    const setCurrentWorkspace = useWorkspaceStore(state => state.setCurrentWorkspace);
+    const [showCreate, setShowCreate] = useState(false);
 
     return (
         <div className="workspace-switcher-wrapper">
@@ -49,12 +32,10 @@ function WorkspaceSwitcher() {
                     <span className="workspace-name">
                         {currentWorkspace?.name}
                     </span>
-
                     <span className="workspace-label">
                         Workspace
                     </span>
                 </div>
-
                 <ChevronDown
                     size={18}
                     className={

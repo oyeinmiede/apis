@@ -1,47 +1,28 @@
 import { useRef } from "react";
 
-function OTPInput({
-    value,
-    onChange,
-}) {
+function OTPInput({ value, onChange }) {
     const inputs = useRef([]);
-
     function handleChange(e, index) {
         const char = e.target.value;
-
         if (!/^\d*$/.test(char)) return;
-
-        const otp =
-            value.split("");
-
+        const otp = value.split("");
         otp[index] = char;
-
-        onChange(
-            otp.join("")
-        );
-
-        if (
-            char &&
-            index < 7
-        ) {
+        onChange(otp.join(""));
+        if (char && index < 7) {
             inputs.current[index + 1].focus();
         }
     }
 
     function handlePaste(e) {
         e.preventDefault();
-    
         const pasted = e.clipboardData
             .getData("text")
             .replace(/\D/g, "")
             .slice(0, 8);
     
         if (!pasted) return;
-    
-        onChange(pasted);
-    
+        onChange(pasted);    
         const last = Math.min(pasted.length - 1, 7);
-    
         inputs.current[last]?.focus();
     }
 

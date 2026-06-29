@@ -12,7 +12,14 @@ function AuthCallback() {
 
     return (
         <div className="auth-loading">
-            Signing you in...
+            <div className="auth-loading__logo">
+                <img src="/logo-apis.png" alt="logo" />
+                <span>Apis</span>
+            </div>
+            <div className="auth-loading__track">
+                <div className="auth-loading__fill" />
+            </div>
+            <span className="auth-loading__label">Signing you in…</span>
         </div>
     );
 }

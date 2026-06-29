@@ -1,11 +1,6 @@
-import {
-    RouterProvider,
-} from "react-router-dom";
-
+import { RouterProvider } from "react-router-dom";
 import router from "../router/router";
-
 import AppInitializer from "./AppInitializer";
-
 import ProfileProvider from "@/features/settings/providers/ProfileProviders";
 import BoardProvider from "@/features/boards/providers/BoardProvider";
 import ThemeProvider from "./ThemeProvider";

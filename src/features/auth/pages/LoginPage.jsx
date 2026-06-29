@@ -25,21 +25,17 @@ function LoginPage() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-
         setLoading(true);
         setError("");
-
         const { error } = await signIn({
             email,
             password,
         });
-
         if (error) {
             setError(error.message);
             setLoading(false);
             return;
         }
-
         navigate("/dashboard");
     }
 
@@ -47,26 +43,18 @@ function LoginPage() {
         <AuthLayout mode="login">
             <AuthModal>
                 <h1>Sign in to Apis</h1>
-                <p>
-                    Welcome back to your hive.
-                </p>
-
+                <p>Welcome back to your hive.</p>
                 <form className="auth-form" onSubmit={handleSubmit}>
                     <GoogleButton />
                     <AuthDivider />
 
                     <div>
-                        <label htmlFor="email">
-                            Email
-                        </label>
+                        <label htmlFor="email">Email</label>
                         <Input id="email" type="email" placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
 
                     <div className="auth-field">
-                        <label htmlFor="password">
-                            Password
-                        </label>
-
+                        <label htmlFor="password">Password</label>
                         <PasswordInput
                             id="password"
                             placeholder="Enter your password"
@@ -78,21 +66,13 @@ function LoginPage() {
                     <div className="auth-options">
                         <div>
                             <Checkbox id="remember" />
-                            <label htmlFor="remember">
-                                Remember me
-                            </label>
+                            <label htmlFor="remember">Remember me</label>
                         </div>
                         <a href="/forgot-password">
                             Forgot password?
                         </a>
                     </div>
-                    {
-                        error && (
-                            <p className="auth-error">
-                                {error}
-                            </p>
-                        )
-                    }
+                    {error && (<p className="auth-error">{error}</p>)}
                     <Button type="submit" disabled={loading}>
                         {loading
                             ? "Signing in..."
@@ -100,9 +80,7 @@ function LoginPage() {
                     </Button>
                     <p className="auth-help">
                         Having trouble signing in?{" "}
-                        <a href="/forgot-password">
-                            Reset link here
-                        </a>
+                        <a href="/forgot-password">Reset link here</a>
                     </p>
                 </form>
             </AuthModal>

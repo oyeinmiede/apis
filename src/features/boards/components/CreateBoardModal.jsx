@@ -10,10 +10,7 @@ import useBoardStore from "../store/boardStore";
 
 import "../styles/create-board-modal.css";
 
-function CreateBoardModal({
-    open,
-    onClose,
-}) {
+function CreateBoardModal({ open, onClose, }) {
     const [loading, setLoading] = useState(false);
     const [boardName, setBoardName] = useState("");
     const user = useAuthStore(state => state.user)

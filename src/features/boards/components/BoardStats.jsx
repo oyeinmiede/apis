@@ -1,10 +1,7 @@
 import useBoardStore from "../store/boardStore";
 
 function BoardsStats() {
-    const boards = useBoardStore(
-        state => state.boards
-    );
-
+    const boards = useBoardStore(state => state.boards);
     const totalBoards = boards.length;
 
     return (

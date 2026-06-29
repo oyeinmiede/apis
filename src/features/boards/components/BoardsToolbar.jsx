@@ -1,21 +1,8 @@
 import { Input } from "@/components/ui/input";
-
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select";
-
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import "../styles/boards-toolbar.css";
 
-function BoardsToolbar({
-    query,
-    setQuery,
-    sort,
-    setSort,
-}) {
+function BoardsToolbar({ query, setQuery, sort, setSort }) {
     return (
         <div className="boards-toolbar">
             <Input

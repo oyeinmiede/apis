@@ -2,12 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import "../styles/template-card.css";
 
-function TemplateCard({
-    title,
-    category,
-    description,
-}) {
-
+function TemplateCard({ title, category, description, }) {
     return (
         <article className="template-card">
             <div className="template-preview">

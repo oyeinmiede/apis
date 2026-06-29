@@ -1,10 +1,4 @@
-import {
-    Home,
-    LayoutGrid,
-    FolderKanban,
-    Users,
-    Settings,
-} from "lucide-react";
+import { Home, LayoutGrid, FolderKanban, Users, Settings } from "lucide-react";
 
 export const navigationItems = [
     {

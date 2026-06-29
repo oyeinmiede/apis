@@ -12,11 +12,8 @@ function GoogleButton() {
 
     async function handleGoogleLogin() {
         if (loading) return;
-
         setLoading(true);
-
         const { error } = await signInWithGoogle();
-
         if (error) {
             console.error(error);
             setLoading(false);

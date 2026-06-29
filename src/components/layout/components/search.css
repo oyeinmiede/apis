@@ -21,7 +21,6 @@
     border:none;
     cursor:pointer;
     transition:.15s;
-    /* position: absolute; */
 }
 
 .search-result:hover{

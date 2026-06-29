@@ -1,7 +1,6 @@
 import { Tldraw } from "tldraw";
 import "tldraw/tldraw.css";
 
-import CanvasObjectLayer from "./canvas/CanvasObjectLayer";
 import { debounce } from "../utils/debounce";
 import { loadBoardSnapshot, saveBoardSnapshot } from "../utils/boardStorage";
 import { supabase } from "@/services/supabase/client";
@@ -35,8 +34,6 @@ function Canvas({ setEditor, items, setItems, activeTool, boardId }) {
             className="canvas-wrapper"
             onDoubleClick={handleCanvasClick}
         >
-            <CanvasObjectLayer items={items} />
-
             <Tldraw
                 hideUi
                 onMount={(editor) => {
@@ -71,7 +68,6 @@ function Canvas({ setEditor, items, setItems, activeTool, boardId }) {
                     return cleanup;
                 }}
             />
-
         </div>
     );
 }

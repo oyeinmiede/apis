@@ -39,34 +39,20 @@ function DeleteBoardDialog({
             open={open}
             onOpenChange={onOpenChange}
         >
-
             <DialogContent>
-
                 <DialogHeader>
-
-                    <DialogTitle>
-                        Delete board?
-                    </DialogTitle>
-
-                    <DialogDescription>
-                        This action cannot be undone.
-                    </DialogDescription>
-
+                    <DialogTitle>Delete board?</DialogTitle>
+                    <DialogDescription>This action cannot be undone.</DialogDescription>
                 </DialogHeader>
-
                 <Button
                     variant="destructive"
                     onClick={destroy}
                 >
                     Delete Board
                 </Button>
-
             </DialogContent>
-
         </Dialog>
-
     );
-
 }
 
 export default DeleteBoardDialog;

@@ -5,11 +5,8 @@ const useWorkspaceStore = create((set) => ({
     currentWorkspace: null,
     loading: true,
 
-    setLoading: (loading) =>
-        set({ loading }),
-
-    setWorkspaces: (workspaces) =>
-        set({ workspaces }),
+    setLoading: (loading) => set({ loading }),
+    setWorkspaces: (workspaces) => set({ workspaces }),
 
     setCurrentWorkspace:(workspace)=>{
         if(!workspace){

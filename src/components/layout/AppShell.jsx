@@ -7,10 +7,8 @@ function AppShell({ children }) {
     return (
         <div className="app-shell">
             <Sidebar />
-
             <div className="workspace-area">
                 <Topbar />
-
                 <main className="app-shell-content">
                     {children}
                 </main>

@@ -1,27 +1,20 @@
 import useBoardStore from "../store/boardStore";
-
 import BoardCard from "@/features/dashboard/components/BoardCard";
 
 function BoardsGrid({ query, sort }) {
-    const boards = useBoardStore(
-        state => state.boards
-    );
-
+    const boards = useBoardStore(state => state.boards);
     const filteredBoards = boards.filter(board =>
         board.title
             .toLowerCase()
             .includes(query.toLowerCase())
     );
-
     const sortedBoards = [...filteredBoards];
-
     switch (sort) {
         case "alphabetical":
             sortedBoards.sort((a, b) =>
                 a.title.localeCompare(b.title)
             );
             break;
-    
         case "created":
             sortedBoards.sort(
                 (a, b) =>
@@ -29,7 +22,6 @@ function BoardsGrid({ query, sort }) {
                     new Date(a.created_at)
             );
             break;
-    
         default:
             sortedBoards.sort(
                 (a, b) =>
@@ -38,14 +30,11 @@ function BoardsGrid({ query, sort }) {
             );
     }
 
-
     if (!boards.length) {
         return (
             <div className="boards-empty">
                 <h3>No boards yet</h3>
-                <p>
-                    Create your first board to start building.
-                </p>
+                <p>Create your first board to start building.</p>
             </div>
         );
     }
@@ -71,7 +60,6 @@ function BoardsGrid({ query, sort }) {
                 ))
             )}
         </div>
-
     );
 }
 
