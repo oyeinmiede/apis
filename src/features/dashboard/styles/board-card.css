@@ -29,7 +29,7 @@
     width: 60px;
     height: 40px;
     border-radius: 8px;
-    background: rgba(255, 193, 7, .15);
+    background: var(--accent-soft);
 }
 
 .board-preview::after {
@@ -40,5 +40,37 @@
     width: 80px;
     height: 12px;
     border-radius: 999px;
-    background: rgba(184, 115, 51, .3);
+    background: var(--accent-soft);
+}
+
+.board-card-top{
+    position:relative;
+}
+
+.board-menu-btn{
+    position:absolute;
+    top:8px;
+    right:8px;
+    opacity:0;
+    transition:.15s;
+    background:var(--surface-1);
+    border:1px solid var(--border-primary);
+    color: var(--text-primary);
+}
+
+.board-card:hover .board-menu-btn{
+    opacity:1;
+}
+
+.board-menu-btn:hover{
+    background:var(--accent-soft);
+}
+
+.dropdown-menu-content {
+    color: var(--accent1);
+    max-width: max-content;
+}
+
+.dropdown-menu-item {
+    padding: 10px;
 }

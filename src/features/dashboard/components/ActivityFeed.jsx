@@ -50,7 +50,7 @@ function ActivityFeed({workspaceId}){
                         No activity yet.
                     </p>
                 ):(
-                    activities.map(activity=>(
+                    activities.slice(0,4).map(activity=>(
 
                         <ActivityItem
                             key={activity.id}

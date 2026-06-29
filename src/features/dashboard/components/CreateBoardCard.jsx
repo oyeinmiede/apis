@@ -5,7 +5,7 @@ function CreateBoardCard() {
     return (
         <article className="create-board-card">
             <Hexagon size={28} />
-            <h3>Start a new Hive</h3>
+            <h3>Start a new Cell</h3>
             <span>
                 Create Board from scratch
             </span>

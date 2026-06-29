@@ -66,7 +66,7 @@ function BoardsGrid({ query, sort }) {
                         key={board.id}
                         board={board}
                         title={board.title}
-                        updatedAt={board.updatedAt}
+                        updatedAt={board.updated_at}
                     />
                 ))
             )}

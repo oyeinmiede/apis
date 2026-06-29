@@ -7,17 +7,19 @@ import useBoardStore from "@/features/boards/store/boardStore";
 import CreateBoardModal from "@/features/boards/components/CreateBoardModal";
 
 import "../styles/recent-boards-section.css";
+import { useNavigate } from "react-router-dom";
 
 function RecentBoardsSection() {
     const boards = useBoardStore((state) => state.boards);
     const [open, setOpen] = useState(false);
+    const navigate = useNavigate()
 
     return (
         <section>
             <SectionHeader
                 title="Recent Boards"
                 action={
-                    <Button variant="ghost" size="xs">
+                    <Button variant="ghost" size="xs" onClick={() => navigate('/boards')}>
                         View All
                     </Button>
                 }
@@ -31,11 +33,11 @@ function RecentBoardsSection() {
                     </button>
                         
 
-                        {boards.map((board) => (
+                        {boards.slice(0,3).map((board) => (
                             <BoardCard
                                 key={board.id}
                                 title={board.title}
-                                updatedAt={board.updatedAt}
+                                updatedAt={board.updated_at}
                                 board={board}
                             />
                         ))}
