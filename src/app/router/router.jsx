@@ -16,13 +16,16 @@ import BoardsPage from "@/features/boards/pages/BoardsPage";
 import SettingsPage from "@/features/settings/pages/SeettingsPage";
 import TemplatePage from "@/features/templates/pages/TemplatePage";
 import TeamsPage from "@/features/teams/pages/TeamsPage";
+import LandingPage from "@/features/default/LandingPage";
+import NotFoundPage from "@/features/default/NotFoundPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <div>Landing</div>,
+        element: (
+            <LandingPage />
+        ),
     },
-
     {
         path: "/login",
         element: (
@@ -31,7 +34,6 @@ const router = createBrowserRouter([
             </PublicOnlyRoute>
         ),
     },
-
     {
         path: "/signup",
         element: (
@@ -40,7 +42,6 @@ const router = createBrowserRouter([
             </PublicOnlyRoute>
         ),
     },
-
     {
         path: "/dashboard",
         element: (
@@ -51,39 +52,43 @@ const router = createBrowserRouter([
             </ProtectedRoute>
         ),
     },
-
     {
         path: "/board/:id",
         element: (
             <ProtectedRoute>
-                <BoardPage />
+                <WorkspaceRequiredRoute>
+                    <BoardPage />
+                </WorkspaceRequiredRoute>
             </ProtectedRoute>
         ),
     },
-
     {
         path: "/templates",
         element: (
             <ProtectedRoute>
+            <WorkspaceRequiredRoute>
                 <TemplatePage />
+            </WorkspaceRequiredRoute>
             </ProtectedRoute>
         ),
     },
-
     {
         path: "/teams",
         element: (
             <ProtectedRoute>
+            <WorkspaceRequiredRoute>
                 <TeamsPage />
+            </WorkspaceRequiredRoute>
             </ProtectedRoute>
         ),
     },
-
     {
         path: "/settings",
         element: (
             <ProtectedRoute>
+            <WorkspaceRequiredRoute>
                 <SettingsPage />
+            </WorkspaceRequiredRoute>
             </ProtectedRoute>
         ),
     },
@@ -109,13 +114,19 @@ const router = createBrowserRouter([
         path: "/boards",
         element: (
             <ProtectedRoute>
+            <WorkspaceRequiredRoute>
                 <BoardsPage />
+            </WorkspaceRequiredRoute>
             </ProtectedRoute>
         ),
     },
     {
         path: "/auth/callback",
         element: <AuthCallback />,
+    },
+    {
+        path: "*",
+        element: <NotFoundPage />,
     },
 ]);
 
