@@ -5,7 +5,7 @@ import { signOut } from "@/services/supabase/auth";
 import "./styles/topbar.css";
 import { useNavigate } from "react-router-dom";
 import NotificationBell from "./components/NotificationBell";
-import SearchBar from "./components/Searchbar";
+import SearchBar from "./components/SearchBar";
 
 function Topbar() {
     const profile = useProfileStore(
