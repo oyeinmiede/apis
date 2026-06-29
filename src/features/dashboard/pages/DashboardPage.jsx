@@ -1,7 +1,7 @@
 import AppShell from "../../../components/layout/AppShell";
 import PageContainer from "../../../components/layout/PageContainer";
 
-import GreetingSection from "../components/GreetingSection";
+import GreetingSection from "../components/Greetingsection";
 import AiLauncher from "../components/AiLauncher";
 import RecentBoardsSection from "../components/RecentBoardsSection";
 

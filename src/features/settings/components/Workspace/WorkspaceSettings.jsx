@@ -5,7 +5,7 @@ import useWorkspaceStore from "@/app/store/workspaceStore";
 
 import { getWorkspaceMembers } from "@/features/workspace/services/workspaces";
 
-import WorkspaceList from "./WorkspaceList";
+import WorkspaceList from "./WorkSpaceList";
 import WorkspaceDetails from "./WorkspaceDetails";
 import MemberList from "./MemberList";
 import InviteMemberForm from "./InviteMemberForm";
