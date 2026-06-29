@@ -6,14 +6,33 @@ import {
     GraduationCap,
     Palette,
     Check,
+    Moon,
+    Sun,
 } from "lucide-react";
-
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-
+import { useNavigate } from "react-router-dom";
 import "./landing.css";
 
 function LandingPage() {
+    const navigate = useNavigate()
+    const [theme, setTheme] = useState(
+        localStorage.getItem("theme") || "light"
+    );
+
+    useEffect(() => {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+    }, [theme]);
+
+    function toggleTheme() {
+        setTheme(prev =>
+            prev === "dark"
+                ? "light"
+                : "dark"
+        );
+    }
+
     return (
         <div className="lp">
 
@@ -30,12 +49,26 @@ function LandingPage() {
                     <a href="#pricing">Pricing</a>
                 </div>
 
-                <Link
-                    to="/signup"
-                    className="nav-cta"
-                >
-                    Get started free
-                </Link>
+                <div className="landing-nav-right">
+
+                    <button
+                        className="theme-toggle"
+                        onClick={toggleTheme}
+                    >
+                        {theme === "dark"
+                            ? <Sun size={18} />
+                            : <Moon size={18} />
+                        }
+                    </button>
+
+                    <button
+                        className="nav-cta"
+                        onClick={() => navigate("/login")}
+                    >
+                        Get Started Free
+                    </button>
+
+                </div>
 
             </nav>
 
@@ -209,7 +242,7 @@ function LandingPage() {
                     <h3>Infinite canvas</h3>
 
                     <p>
-                    Draw, write, place sticky notes, shapes, and arrows on a canvas that never runs out of space.
+                        Draw, write, place sticky notes, shapes, and arrows on a canvas that never runs out of space.
                     </p>
                 </div>
 
@@ -221,7 +254,7 @@ function LandingPage() {
                     <h3>Real-time collaboration</h3>
 
                     <p>
-                    Invite your team to any board. Everyone sees changes live — no refresh, no lag, no confusion.
+                        Invite your team to any board. Everyone sees changes live — no refresh, no lag, no confusion.
                     </p>
                 </div>
 
@@ -233,7 +266,7 @@ function LandingPage() {
                     <h3>Meet Hexa</h3>
 
                     <p>
-                    Let Hexa, your AI collaborator, generate diagrams, brainstorm ideas, and help you think faster.
+                        Let Hexa, your AI collaborator, generate diagrams, brainstorm ideas, and help you think faster.
                     </p>
                 </div>
 
@@ -259,7 +292,7 @@ function LandingPage() {
                         <h4>Teams</h4>
 
                         <p>
-                        Run standups, plan sprints, map out strategy — all in one shared space your whole team can see.
+                            Run standups, plan sprints, map out strategy — all in one shared space your whole team can see.
                         </p>
                     </div>
 
@@ -271,7 +304,7 @@ function LandingPage() {
                         <h4>Students</h4>
 
                         <p>
-                        Study groups, project planning, mind maps. Apis keeps your ideas organized and your team aligned.
+                            Study groups, project planning, mind maps. Apis keeps your ideas organized and your team aligned.
                         </p>
                     </div>
 
@@ -283,7 +316,7 @@ function LandingPage() {
                         <h4>Creatives</h4>
 
                         <p>
-                        Mood boards, concept maps, design critiques. A canvas that keeps up with how your brain works.
+                            Mood boards, concept maps, design critiques. A canvas that keeps up with how your brain works.
                         </p>
                     </div>
 
@@ -363,7 +396,7 @@ function LandingPage() {
                 </h2>
 
                 <p>
-                No tiers, no paywalls. Everything is free right now — enjoy it.
+                    No tiers, no paywalls. Everything is free right now — enjoy it.
                 </p>
 
                 <div className="price-card">
@@ -374,7 +407,7 @@ function LandingPage() {
                     </div>
 
                     <p className="price-desc">
-                    Full access. No credit card. No catch.
+                        Full access. No credit card. No catch.
                     </p>
 
                     <ul className="price-features">
@@ -405,7 +438,7 @@ function LandingPage() {
                         </li>
 
                         <li>
-                            <Check size={16}  color="#ffc107" />
+                            <Check size={16} color="#ffc107" />
                             Templates
                         </li>
 
@@ -434,7 +467,7 @@ function LandingPage() {
                 </h2>
 
                 <p>
-                Get your team on Apis today — it takes less than a minute.
+                    Get your team on Apis today — it takes less than a minute.
                 </p>
 
                 <Link
@@ -454,7 +487,7 @@ function LandingPage() {
                 </div>
 
                 <span className="copy">
-                    &copy; {new Date().getFullYear()} <a target="_blank" href="https://gabrielleduere.vercel.app">Gabrielle Duere</a> 
+                    &copy; {new Date().getFullYear()} <a target="_blank" href="https://gabrielleduere.vercel.app">Gabrielle Duere</a>
                 </span>
 
                 <p>
